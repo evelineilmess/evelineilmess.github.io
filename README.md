@@ -1,54 +1,56 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Evelin — Graphic & Product Designer</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
+import React from "react";
+import { FooterSection } from "./FooterSection";
+import { HeroSection } from "./HeroSection";
+import { ProjectsSection } from "./ProjectsSection";
 
-  <header class="nav">
-    <nav>
-      <a href="index.html" class="active">Home</a>
-      <a href="#projects">Projects</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
+export const HomeDarkMode = (): JSX.Element => {
+  const navigationItems = [
+    { label: "Home", active: true },
+    { label: "Projects", active: false },
+    { label: "About", active: false },
+    { label: "Contact", active: false },
+  ];
 
-  <main>
-    <section class="hero">
-      <h1>Graphic &<br>Product Design</h1>
+  return (
+    <div className="bg-blackblack-900 w-full min-w-[1440px] min-h-[5297px] flex flex-col">
+      <nav className="inline-flex h-14 w-[456px] self-center relative mt-[104px] items-center justify-center gap-4 px-[5px] py-0 bg-blackblack-400 rounded-[80px] shadow-navigation">
+        {navigationItems.map((item, index) => (
+          <a
+            key={index}
+            href={`#${item.label.toLowerCase()}`}
+            className={`inline-flex h-[46px] items-center justify-center gap-1 p-4 relative flex-[0_0_auto] rounded-[48px] ${
+              item.active ? "bg-whitewhite-500" : ""
+            }`}
+          >
+            <span
+              className={`relative w-fit mt-[-8.00px] mb-[-6.00px] [font-family:'Work_Sans-Regular',Helvetica] font-normal text-xl tracking-[-0.20px] leading-[28.0px] whitespace-nowrap ${
+                item.active ? "text-blackblack-500" : "text-greygrey-500"
+              }`}
+            >
+              {item.label}
+            </span>
+          </a>
+        ))}
+      </nav>
 
-      <div class="intro">
-        <p><strong>Let’s Talk</strong><br>hello@evelindesign.com</p>
-        <p>Hello, I’m Evelin, a London based Multidisciplinary Designer,
-           focusing on Advertising, Branding and Product Design.</p>
+      <h1 className="ml-px h-[311px] w-[1217px] self-center mt-[100px] [font-family:'Berghan-Regular',Helvetica] font-normal text-whitewhite-500 text-[140px] tracking-[0] leading-[140px]">
+        Graphic &amp;
+        <br />
+        Product Design
+      </h1>
+
+      <ProjectsSection />
+
+      <div className="flex ml-28 w-[1217px] h-[58px] relative mt-[100px] items-end gap-[754px]">
+        <div className="items-start gap-[11px] inline-flex flex-col relative flex-[0_0_auto]">
+          <h2 className="relative w-fit mt-[-1.00px] font-heading-h2 font-[number:var(--heading-h2-font-weight)] text-whitewhite-500 text-[length:var(--heading-h2-font-size)] tracking-[var(--heading-h2-letter-spacing)] leading-[var(--heading-h2-line-height)] whitespace-nowrap [font-style:var(--heading-h2-font-style)]">
+            Projects
+          </h2>
+        </div>
       </div>
-    </section>
 
-    <section id="projects" class="projects">
-      <a href="project-01.html" class="project-card">
-        <img src="assets/images/auntie-annes.png" alt="Auntie Anne's">
-        <h3>Auntie Anne’s</h3>
-        <p>Social Media, Print</p>
-      </a>
-
-      <a href="project-02.html" class="project-card">
-        <img src="assets/images/quorso.png" alt="Quorso">
-        <h3>Quorso</h3>
-        <p>Web, Social Media, Print</p>
-      </a>
-
-      <!-- more cards later -->
-    </section>
-  </main>
-
-  <footer class="footer">
-    <h2>Let’s talk!</h2>
-    <a href="mailto:hello@evelindesign.com">hello@evelindesign.com →</a>
-  </footer>
-
-</body>
-</html>
+      <HeroSection />
+      <FooterSection />
+    </div>
+  );
+};

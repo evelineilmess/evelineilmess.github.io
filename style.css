@@ -893,3 +893,14 @@
     height: auto;
   }
 }
+
+/* Force black background everywhere */
+html, body {
+  background: var(--blackblack-900, #000) !important;
+}
+
+/* Make the main page wrapper black too */
+.home-dark-mode {
+  background: var(--blackblack-900, #000) !important;
+}
+

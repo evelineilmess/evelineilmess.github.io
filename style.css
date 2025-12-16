@@ -1,4 +1,4 @@
-.home-dark-mode {
+/* .home-dark-mode {
   background-color: var(--blackblack-900);
   width: 100%;
   min-width: 1440px;
@@ -423,7 +423,7 @@
   top: 7.65%;
   left: 0;
   transform: rotate(135deg);
-}
+} */
 /* Inject original CSS from globals.css and styleguide.css here */
 
 .home-dark-mode {
@@ -855,4 +855,41 @@
   top: 7.65%;
   left: 0;
   transform: rotate(135deg);
+}
+
+/* Center the 1440 design on big screens, but allow shrinking */
+.home-dark-mode {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+/* Stop forcing a desktop min width */
+.home-dark-mode {
+  min-width: 0 !important;
+}
+
+/* Mobile / small screens */
+@media (max-width: 900px) {
+  .home-dark-mode {
+    max-width: 100%;
+  }
+
+  /* Give the page consistent side padding */
+  .home-dark-mode > * {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  /* If your sections rely on left offsets, force padding instead */
+  .home-dark-mode {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  /* Make images scale naturally */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
 }

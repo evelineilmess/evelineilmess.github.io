@@ -1,0 +1,74 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #000;
+  color: #fff;
+  font-family: system-ui, sans-serif;
+}
+
+.nav nav {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  padding: 24px;
+}
+
+.nav a {
+  color: #aaa;
+  text-decoration: none;
+}
+
+.nav a.active {
+  color: #000;
+  background: #fff;
+  padding: 6px 12px;
+  border-radius: 20px;
+}
+
+.hero {
+  padding: 80px 64px;
+}
+
+.hero h1 {
+  font-size: 72px;
+  line-height: 1.1;
+  margin-bottom: 32px;
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  padding: 64px;
+}
+
+.project-card {
+  background: #111;
+  border-radius: 16px;
+  overflow: hidden;
+  text-decoration: none;
+  color: #fff;
+}
+
+.project-card img {
+  width: 100%;
+  display: block;
+}
+
+.project-card h3 {
+  padding: 16px;
+}
+
+.project-card p {
+  padding: 0 16px 16px;
+  color: #aaa;
+}
+
+.footer {
+  text-align: center;
+  padding: 80px 24px;
+}
